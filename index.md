@@ -89,8 +89,8 @@ The optional `:valuation-fn` entry can be used to capture this. It should be a u
 
 ```clojure
 {:name         :hex
- :pattern      #"[0-9a-fA-F]+"
- :valuation-fn #(Integer/parseInt % 16)}
+ :pattern      #"0x([0-9a-fA-F]+)"
+ :valuation-fn #(Integer/parseInt (second %) 16)}
 
 {:name         :string
  :pattern      #"'((?:[^'\\]|\\.)*)'"
@@ -108,12 +108,12 @@ For example:
 ```clojure
 (def tokens
     #{  {:name :hex
-         :pattern #"^0x([0-9a-fA-F]+)"
+         :pattern #"0x([0-9a-fA-F]+)"
          :valuation-fn #(Integer/parseInt (second %) 16)}
         {:name :plus    :pattern "+"}
         {:name :lparen  :pattern "("}
 		{:name :rparen  :pattern ")"}
-		{:ignore true   :pattern #"^\s+"}})
+		{:ignore true   :pattern #"\s+"}})
 
 (let [lex (make-lexer tokens)]
     (lex "(0x2a + 0x4d)"))
