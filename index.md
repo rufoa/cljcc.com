@@ -70,9 +70,9 @@ In the following example, `:priority` is used to ensure the correct lexing of th
 ```clojure
 (def tokens
     #{
+        { :name :identifier  :pattern #"\w+"  :priority -1 }
         { :name :while       :pattern "while" }
         { :name :true        :pattern "true" }
-        { :name :identifier  :pattern #"\w+"  :priority -1 }
         { :name :lparen      :pattern "(" }
         { :name :rparen      :pattern ")" }
         { :name :eq          :pattern "==" }
