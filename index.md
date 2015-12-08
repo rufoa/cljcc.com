@@ -23,7 +23,7 @@ cljcc is a parser generator for Clojure. You can find it on [GitHub here](https:
 
 cljcc is available as a Maven artifact in [clojars](https://clojars.org/cljcc).
 
-To use it in your leiningen project, add `[cljcc "0.1.0-SNAPSHOT"]` to the dependencies vector in your `project.clj` file.
+To use it in your leiningen project, add `[cljcc "0.1.0"]` to the dependencies vector in your `project.clj` file.
 
 The main namespace `cljcc` exports three functions: `make-lexer`, `make-parser` and `make-combined` (a convenience function which returns a combined lexer and parser).
 
