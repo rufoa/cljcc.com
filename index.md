@@ -23,7 +23,7 @@ cljcc is a parser generator for Clojure. You can find it on [GitHub here](https:
 
 cljcc is available as a Maven artifact in [clojars](https://clojars.org/cljcc).
 
-To use it in your leiningen project, add `[cljcc "0.1.0"]` to the dependencies vector in your `project.clj` file.
+To use it in your leiningen project, add ![Latest release](https://clojars.org/cljcc/latest-version.svg) to the dependencies vector in your `project.clj` file.
 
 The main namespace `cljcc` exports three functions: `make-lexer`, `make-parser` and `make-combined` (a convenience function which returns a combined lexer and parser).
 
@@ -58,6 +58,8 @@ Here is an example invocation:
 A *token spec* is a map describing a particular token. It usually has a `:name`, and has a `:pattern`, which can be either a string or a regex.
 
 The map may also have an `:ignore` entry, which when `true` results in the token being ignored. This is useful when working with languages which are whitespace-insensitive or can have inline comments in the source code.
+
+String tokens can have a `:ci` entry, which when `true`, causes the token to be matched against input in a case-insensitive manner.
 
 ### Priorities
 
